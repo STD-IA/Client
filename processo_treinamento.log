@@ -1,2 +1,0 @@
-Erro no servidor 127.0.0.1:49565 durante o treinamento de ['Alexnet', 5, 0.001, 0.0, 10]: <Fault 1: "<class 'RuntimeError'>:Parent directory ./modelos does not exist.">
-Erro no servidor 127.0.0.1:49623 durante o treinamento de ['Alexnet', 5, 0.001, 0.0, 10]: <Fault 1: "<class 'KeyboardInterrupt'>:">
