@@ -6,6 +6,9 @@ from xmlrpc.server import SimpleXMLRPCRequestHandler, SimpleXMLRPCServer
 from treinador import Treinar
 from memoria_compartilhada import Memoria
 
+"""
+RequestHandler - Definir como o servidor XML-RPC lida com as requisições.
+"""
 class RequestHandler(SimpleXMLRPCRequestHandler):
     rpc_paths = ('/RPC2')
 
@@ -49,7 +52,7 @@ class Distribuidor:
         server = SimpleXMLRPCServer((ip, porta), requestHandler=RequestHandler)
         server.register_function(self.cadastrar_servidor)
 
-        print("Cliente iniciado.")
+        print("Servidor distribuidor inicializado.")
         self.treinadorObj.tempo_inicio = time.time()
         server.serve_forever()
 
@@ -62,7 +65,7 @@ class Distribuidor:
                 servidores.append([ip,porta])
                 self.memoriaObj.escrever_memoria_compartilhada(self.servidores_memoria_comp, servidores)
             except:
-                return "Erro: Não é possível registrar mais servidores."
+                return "Erro: Não é possível registrar mais servidores processadores."
 
         Process(target=self.treinadorObj.treinar,
                 args=(server[0], 

@@ -1,2 +1,4 @@
 /modelos
-.log
+*.log
+/__pycache__
+*.pyc

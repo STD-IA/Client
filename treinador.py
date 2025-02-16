@@ -16,8 +16,8 @@ class Treinar:
     def __init__(self):
         pass
 
-    def treinar(self, ip, porta, task_memoria_comp_name, servidores_memoria_comp_name, lock, log_file):
-        logger_excessao = self.log_config(self.logger_excessao)
+    def treinar(self, ip, porta, task_memoria_comp_name, servidores_memoria_comp_name, lock):
+        logger_excessao = self.log_config(self.log_excessoes_file)
         logger_aviso = self.log_config(self.log_avisos_file)
 
         task_memoria_comp = shared_memory.SharedMemory(name=task_memoria_comp_name)
